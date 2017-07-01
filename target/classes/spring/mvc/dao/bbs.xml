@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+   <typeAlias alias="bbs" type="spring.mvc.model.SpringBbsBean"/>
+  
+   <!--자료실 저장 (JDBC) -> iBatis변경 -->
+   <insert id="bbs_insert" parameterClass="bbs">
+     insert into springBbs(bbs_no,bbs_name,bbs_subject,
+     bbs_pass,bbs_content,bbs_file,bbs_ref,bbs_step,
+     bbs_level,bbs_regdate)
+     values(springBbs_seq.nextval,#bbs_name#,
+     #bbs_subject#,#bbs_pass#,#bbs_content#,
+     #bbs_file#,springBbs_seq.nextval,0,0,sysdate)   
+   </insert>
+   
+   <!-- 조회수 증가 -->
+   <update id="bbs_hit" parameterClass="int">
+      update springBbs set bbs_hit=bbs_hit+1
+      where bbs_no=#bbs_no#
+   </update>
+   
+   <!--자료실 총 개수 (JDBC) -> iBatis변경 -->   
+   <select id="bbs_count" resultClass="int">
+      select count(bbs_no) from springBbs
+   </select>
+   
+   <!--자료실 삭제 (JDBC) -> iBatis변경 -->
+   <delete id="bbs_del" parameterClass="int">
+     delete from springBbs where bbs_no=#bbs_no#
+   </delete>
+   
+   <!-- 답변글 레벨 1씩증가 -->
+    <update id="reply_update" parameterClass="bbs">
+     update springBbs set bbs_level=bbs_level+1 where bbs_ref=#bbs_ref# 
+     and bbs_level>#bbs_level#
+    </update>
+    
+    <!-- 답변글 저장 -->
+    <insert id="reply_insert" parameterClass="bbs">
+      insert into springBbs(bbs_no,bbs_name,bbs_subject,bbs_content,
+      bbs_pass,bbs_ref,bbs_step,bbs_level,bbs_regdate) 
+      values(springBbs_seq.nextval,#bbs_name#,#bbs_subject#,#bbs_content#,
+      #bbs_pass#,#bbs_ref#,#bbs_step#,#bbs_level#,sysdate)
+    </insert>
+    
+    <!-- 자료실 검색 결과(글제목) 게시물 수 -->
+    <select id="bbsfind_cnt2" resultClass="int" 
+    parameterClass="String">
+      select count(bbs_no) from springBbs
+      where bbs_subject like #find_name#
+    </select>    
+    
+    <!-- 자료실 검색 결과(작성자) 게시물 수 -->
+    <select id="bbsfind_cnt1" resultClass="int" 
+    parameterClass="String">
+      select count(bbs_no) from springBbs 
+      where bbs_name like #find_name#  
+    </select>  
+   
+ </sqlMap>
+
+
+

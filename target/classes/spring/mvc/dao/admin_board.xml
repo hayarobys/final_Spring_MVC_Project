@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+    <!-- 관리자 단 게시판 iBatis용 -->
+<sqlMap>
+	<typeAlias alias="adminBoard" type="spring.mvc.model.SpringBoardBean" />
+	
+	<!-- 관리자 단 게시판 총 게시물 수 -->
+	<select id="aBoard_count" resultClass="int">
+	  select count(board_no) from springBoard
+	</select>
+	<!-- 관리자 게시판 검색결과(제목) 총 게시물 수-->
+	<select id="aboardfind_cnt1" resultClass="int"
+	        parameterClass="String">
+	  select count(board_no) from springBoard
+	     where board_title like #find_name#
+	</select>
+	<!-- 관리자 게시판 검색결과(내용) 총 게시물 수-->
+	<select id="aboardfind_cnt2" resultClass="int"
+	        parameterClass="String">
+	  select count(board_no) from springBoard
+	     where board_cont like #find_name#
+	</select>
+	<!-- 관리자 게시판 저장 -->
+	<insert id="aboard_insert" 
+	         parameterClass="adminBoard">
+	 insert into springBoard (board_no,board_name,
+	 board_title,board_cont,board_pwd,board_ref,
+	 board_regdate) values(springBoard_seq.nextval,
+	 #board_name#, #board_title#, #board_cont#,
+	 #board_pwd#,springBoard_seq.nextval,sysdate)         
+	</insert>
+	<!-- 관리자 게시판 수정 -->
+	<update id="aboardEdit" 
+	         parameterClass="adminBoard">
+	 update springBoard set board_name=#board_name#,
+	 board_title=#board_title#,board_cont=#board_cont#
+	 where board_no=#board_no#       
+	</update>
+	<!-- 관리자 게시판 삭제 -->
+	<delete id="aboard_Del" parameterClass="int">
+	  delete from springBoard where board_no=#board_no#
+	</delete>
+</sqlMap>
+
+
+	

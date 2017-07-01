@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0 //EN" 
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+    <!-- 관리자 단 자료실 xml -->
+	<sqlMap resource="spring/mvc/dao/admin_bbs.xml"/>
+    <!-- 관리자 단 게시판 xml -->
+	<sqlMap resource="spring/mvc/dao/admin_board.xml"/>
+    <!-- 관리자 단 회원관리 xml -->
+	<sqlMap resource="spring/mvc/dao/admin_member.xml"/>
+    <!-- 사용자 단 공지사항 xml -->
+	<sqlMap resource="spring/mvc/dao/gongji.xml"/>
+    <!-- 관리자 단 공지사항 xml -->
+	<sqlMap resource="spring/mvc/dao/admin_gongji.xml"/>
+    <!-- 관리자 xml -->
+	<sqlMap resource="spring/mvc/dao/admin.xml"/>
+	<!-- 자료실 xml -->
+	<sqlMap resource="spring/mvc/dao/bbs.xml"/>
+	<!-- 게시판 xml -->
+	<sqlMap resource="spring/mvc/dao/board.xml"/>
+	<!-- 회원관리 xml -->
+	<sqlMap resource="spring/mvc/dao/member.xml"/>
+</sqlMapConfig>
+
+

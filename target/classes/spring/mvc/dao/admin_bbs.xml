@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="adminBbs" type="spring.mvc.model.SpringBbsBean" />
+	
+	<!-- 관리자 단 자료실 총 게시물 수 -->
+	<select id="aBbs_count" resultClass="int">
+	  select count(bbs_no) from springBbs
+	</select>
+	<!-- 관리자 자료실 검색결과(제목) 총 게시물 수-->
+	<select id="abbsfind_cnt1" resultClass="int"
+	        parameterClass="String">
+	  select count(bbs_no) from springBbs
+	     where bbs_subject like #find_name#
+	</select>
+	<!-- 관리자 자료실 검색결과(내용) 총 게시물 수-->
+	<select id="abbsfind_cnt2" resultClass="int"
+	        parameterClass="String">
+	  select count(bbs_no) from springBbs
+	     where bbs_content like #find_name#
+	</select>
+	<!-- 관리자 자료실 저장 -->
+	<insert id="admin_bbs_ins" 
+	         parameterClass="adminBbs">
+	 insert into springBbs (bbs_no,bbs_name,
+	 bbs_subject,bbs_content,bbs_pass,bbs_file,
+	 bbs_ref,bbs_step,bbs_level,bbs_regdate) 
+	 values(springBbs_seq.nextval,#bbs_name#, 
+	 #bbs_subject#, #bbs_content#,#bbs_pass#,
+	 #bbs_file#,springBbs_seq.nextval,0,0,sysdate)         
+	</insert>
+	<!-- 관리자 자료실 수정 -->
+	<update id="admin_bbs_edit" 
+	         parameterClass="adminBbs">
+	 update springBbs set bbs_name=#bbs_name#,
+	 bbs_subject=#bbs_subject#,bbs_file=#bbs_file#,
+	 bbs_content=#bbs_content# where bbs_no=#bbs_no#       
+	</update>
+	<!-- 관리자 자료실 삭제 -->
+	<delete id="admin_bbs_del" parameterClass="int">
+	  delete from springBbs where bbs_no=#bbs_no#
+	</delete>
+	<!-- 관리자 자료실 내용 -->
+	<select id="admin_bbs_cont" parameterClass="int"
+	        resultClass="adminBbs">
+	  select * from springBbs where bbs_no=#bbs_no#
+	</select>
+</sqlMap>
+
+
+	

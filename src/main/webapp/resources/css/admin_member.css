@@ -1,0 +1,108 @@
+﻿@CHARSET "UTF-8";
+
+/* admin_member_list.jsp UI */
+#aGongji_list{
+	width:580px; height:auto;
+	border:1px solid skyblue;
+	margin-top:10px; margin-left:auto;
+	margin-right:auto;
+	border-radius:20px;
+	line-height : 8px; 
+	box-shadow:15px 15px 50px skyblue;
+	font-size: 12px;	
+}
+
+#aGongji_list .aGlist_title{
+	margin:10px 0 0 180px; 
+	width:220px; height : 25px;
+	background:pink; 
+	font-family : 맑은 고딕;
+	padding:8px 2px 2px 2px; 
+	border-radius:15px;
+	text-align:center; font-size:18px;
+}
+#aGlist_count{
+	margin:10px 0 0 450px; background:pink;
+	padding:3px; border-radius:15px; text-align:center;
+	font-size:14px;width:110px;
+}
+#aGlist_t{
+	margin:10px 0 0 20px;
+	border-collapse:collapse;
+}
+#aGlist_t .no{
+	width:50px;text-align:center
+}
+#aGlist_t .title{
+	width:180px;text-align:center;
+}
+#aGlist_t .writer{width:60px;text-align:center;}
+#aGlist_t .date{width:100px; text-align:center;}
+#aGlist_t .hit{text-align:center;}
+
+a:link{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#aGlist_t .title_box{
+	padding-left:10px; text-align:left;
+}
+#aGlist_paging{
+	margin:12px 0 0 230px;
+}
+#aGlist_menu{
+	margin:10px 0 0 480px;
+}
+
+#aGlist_t .id{
+	width:50px; text-align:center;
+}
+#aGlist_t .phone{
+	width:150px; text-align:center;
+}
+#aGlist_t .name{
+	width:100px; text-align:center;
+}
+#aGlist_t .state{
+	width:90px; text-align:center;
+}
+/* admin_mem_info.jsp UI */
+#meminfo_wrap{
+	width:440px; height:auto;
+	border:1px solid #10620A; border-radius:25px;
+	margin-top:10px; margin-left:auto; margin-right:auto;
+	box-shadow:15px 15px 80px #10620A;
+	line-height : 15px;
+	font-size: 12px;	
+}
+#meminfo_wrap .meminfo_title{
+	margin:20px 0 0 170px; width:120px; 
+	background:#10620A;
+	color:white; font-family:맑은 고딕;
+	border-radius:10px; font-size:16px; text-align:center;
+}
+#meminfo_t{
+	margin:20px 0 0 20px;
+}
+#meminfo_t th{
+	background:#B2FFAC; border-radius:15px;
+}
+#meminfo_menu{
+	margin:20px 0 0 180px;
+}
+
+/* admin_mem_edit.jsp Ui */
+#edit_wrap2{
+	width:520px; height:auto;
+	border:1px solid blue; border-radius:15px;
+	margin-top:10px;
+	margin-left:auto;margin-right:auto;
+	box-shadow:10px 10px 10px skyblue;
+}
+#edit_wrap2 .edit_title{
+	margin:20px 0 0 205px; width:90px;
+	font-size:19px; background:pink; border-radius:10px;
+	text-align:center; padding:3px;
+}
+

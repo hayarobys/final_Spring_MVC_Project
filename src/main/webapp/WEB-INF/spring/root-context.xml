@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- DataSource(Connection Pool) 빈 등록 - JNDI 환경설정 : server.xml-->
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/OracleDB" resource-ref="true"/>
+	
+	<!-- myBatis 환경설정 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+     <property name="dataSource" ref="dataSource" />
+     <property name="configLocation" value="/WEB-INF/spring/mybatisConfig.xml"/>     
+    </bean>    
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>   
+	
+    <!-- ibatis 환경설정 - SqlMapClient 빈 등록(스프링에 ibatis 연결) -->
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="/WEB-INF/spring/SqlMapConfig.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>	
+	<!-- SqlMapClientTemplate 빈 등록 -->
+	<bean id="templateService" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="sqlMapClient"></property>
+	</bean>		
+	
+	<!-- JdbcTemplate 객체 생성 -->
+ 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 		<property name="dataSource" ref="dataSource"/>
+ 	</bean>	
+	<!-- 관리자 단 자료실 + myBatis 연결 -->
+	<!-- 관리자 단 게시판 + myBatis 연결 -->
+	<!-- 관리자 단 회원관리 + iBatis 연결 -->
+	<!-- 사용자 단 공지사항 + iBatis 연결 -->
+	<!-- 관리자 단 공지사항 + iBatis 연결 -->
+	<!-- 관리자 + iBatis 연결 -->
+	<!-- 자료실 + JDBC+iBatis 연결 -->
+	<!-- 게시판 + JDBC+iBatis 연결 -->
+	<!-- 방명록 + Spring JDBC 연결 -->
+  	<!-- 회원관리 + iBatis 연결 -->
+	 
+	<context:component-scan base-package="spring.mvc.dao"/>	
+</beans>

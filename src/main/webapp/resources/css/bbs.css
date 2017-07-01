@@ -1,0 +1,194 @@
+@CHARSET "UTF-8";
+
+/* bbs_write.do & bbs_edit.do ui */
+#bWrite_wrap{
+	width:500px; height:auto;
+	margin-top:20px; margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:10px 10px 10px skyblue;
+}
+#bWrite_wrap .bWrite_title{
+	margin:20px 0 0 195px; width:120px;
+	background:pink; border-radius:10px; font-size:19px;
+	text-align:center; padding:3px;
+}
+#bWrite_t{
+	margin:15px 0 0 20px;
+}
+#bWrite_t th{
+	background:pink; border-radius:10px;	
+}
+.box{
+	border:1px solid blue; border-radius:10px; padding:3px;
+}
+#bWrite_menu{
+	margin:17px 0 0 190px;
+}
+.input_b:hover{
+	background:#ccc; cursor:hand; cursor:pointer;
+	border-radius:15px;
+	border:1px solid red;
+	box-shadow:10px 10px 10px orange; font-weight:bold;
+}
+
+/* bbs_list.jsp */
+#list_wrap{
+	width:550px; height:auto;
+	border:1px dotted orange;
+	margin-top:10px; margin-left:auto;
+	margin-right:auto;
+	border-radius:15px; 
+	box-shadow:15px 15px 50px skyblue;
+	font-size:12px;
+}
+#list_wrap .list_title{
+	margin:20px 0 0 160px; width:190px;
+	background:pink; padding:3px; border-radius:15px;
+	text-align:center; font-size:19px;	
+	font-family : 맑은 고딕;
+	padding:3px; border-radius:15px;
+	text-align:center; font-size:20px;
+}
+#list_count{
+	margin:20px 0 0 400px; background:pink;
+	padding:3px; border-radius:15px; text-align:center;
+	font-size:14px;width:110px;
+}
+#list_t{
+	margin:20px 0 0 40px;
+	border-collapse:collapse;
+}
+#list_t .no{
+	width:50px;text-align:center
+}
+#list_t .title{
+	width:200px;text-align:center;
+}
+#list_t .writer{width:70px;text-align:center;}
+#list_t .date{width:100px; text-align:center;}
+#list_t .hit{text-align:center;}
+
+a:link{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#list_t .title_box{
+	padding-left:10px; text-align:left;
+}
+#list_paging{
+	margin:35px 0 0 200px;
+}
+#list_menu{
+	margin:5px 0 0 450px;
+}
+
+/* bbs_cont.jsp ui */
+#bCont_wrap{
+	width:330px; padding:10px;
+	margin-top:15px; margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:10px 10px 10px skyblue;
+}
+#bCont_wrap .bCont_title{
+	margin:10px 0 0 100px; width:130px;
+	background:pink; border-radius:10px;
+	font-size:20px; text-align:center; padding:3px;
+}
+#bCont_t{
+	margin:20px 0 0 50px;	
+}
+#bCont_t th{
+	background:pink; border-radius:10px;
+}
+#bCont_menu{
+	margin:20px 0 0 60px;
+}
+
+/*bbs_reply.jsp ui*/
+#bReply_wrap{
+	width:480px; height:auto;
+	margin-top:20px; margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:10px 10px 10px skyblue;
+}
+#bReply_wrap .bReply_title{
+	margin:17px 0 0 190px; width:100px; background:pink;
+	padding:3px; font-size:20px; text-align:center;
+	border-radius:15px;
+}
+#bReply_t{
+	margin:17px 0 0 37px;
+}
+#bReply_t th{
+	background:pink; border-radius:10px;
+}
+#bReply_menu{
+	margin:23px 0 0 185px;
+}
+
+/* bbs_delete.jsp UI */
+#bDelete_wrap{
+	width:250px; padding : 10px;
+	margin-top : 60px;
+	margin-left : auto; margin-right:auto;
+	border:1px solid orange;
+	border-radius : 20px;
+	box-shadow : 15px 15px 15px orange;
+}
+#bDelete_wrap .bDelete_title{
+	margin:10px 0 0 60px;
+	width : 120px; padding : 3px;
+	text-align : center; font-size : 20px;
+	border-radius : 20px; background : pink;		
+}
+#bDelete_t{ /* 테이블 영역 */
+	margin : 20px 0 0 10px;
+}
+#bDelete_t th{	
+	background : pink;
+	border-radius : 20px;
+}
+#bDelete_menu{  /* 버튼 영역 */
+	margin : 20px 0 0 80px;
+}
+/*검색 ui */
+#bbs_find{
+	margin:10px 0 0 160px;
+}
+
+/* bbs_find.jsp ui */
+#bbslist_wrap{
+	width:550px; height:auto;
+	border:1px solid orange;
+	margin-top:20px; margin-left:auto;
+	margin-right:auto;
+	border-radius:20px; 
+	box-shadow:15px 15px 50px orange;
+}
+#bbslist_wrap .bbslist_title{
+	margin:20px 0 0 180px; 
+	width:180px; height : 35px;
+	background:pink;
+	font-family : 맑은 고딕;
+	padding:3px; border-radius:15px;
+	text-align:center; font-size:20px;
+}
+#bbslist_c{
+	margin:15px 0 0 430px;
+}
+#bbslist_t{
+	margin:15px 0 0 40px;
+}
+#bbslist_paging{
+	margin:13px 0 0 190px;
+}
+#bbslist_w{
+	margin:13px 0 0 450px;
+}
+#bbsfind{
+	margin:10px 0 0 143px;
+}
+
+
+

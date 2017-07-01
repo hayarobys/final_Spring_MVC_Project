@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="adminGongji" type="spring.mvc.model.SpringGongjiBean" />
+	
+	<!-- 관리자 공지사항 저장 -->
+	<insert id="aGongji_insert" parameterClass="adminGongji">
+	 insert into springGongji (gongji_no,gongji_name,gongji_title,
+	 gongji_cont,gongji_pwd,gongji_regdate) 
+	 values(springGongji_seq.nextval,#gongji_name#,
+	 #gongji_title#,#gongji_cont#,#gongji_pwd#,sysdate)
+	</insert>
+	
+	<!-- 관리자 공지사항 총 게시물 수 -->
+	<select id="aGongji_count" resultClass="int">
+	 select count(gongji_no) from springGongji
+	</select>
+	
+	 <!-- 관리자 공지사항 검색 결과(공지제목) 총 게시물 수 -->
+    <select id="agongjifind_cnt1" resultClass="int" 
+    parameterClass="String">
+      select count(gongji_no) from springGongji
+      where gongji_title like #find_name#  
+    </select>  
+    
+	 <!-- 관리자 공지사항 검색 결과(공지 내용) 총 게시물 수 -->
+    <select id="agongjifind_cnt2" resultClass="int" 
+    parameterClass="String">
+      select count(gongji_no) from springGongji
+      where gongji_cont like #find_name#
+    </select>      
+
+    <!-- 관리자 공지사항 내용+수정폼+삭제폼 -->
+    <select id="agongji_cont" parameterClass="int" 
+    resultClass="adminGongji">
+      select * from springGongji where gongji_no=#gongji_no#
+    </select>   
+    
+    <!-- 관리자 공지사항 수정 -->
+    <update id="agongji_edit" parameterClass="adminGongji">
+     update springGongji set gongji_name=#gongji_name#,
+     gongji_title=#gongji_title#,gongji_cont=#gongji_cont#,
+     gongji_pwd=#gongji_pwd# where gongji_no=#gongji_no#
+    </update>
+</sqlMap>
+
+
+
+
+
+
+
+
+	

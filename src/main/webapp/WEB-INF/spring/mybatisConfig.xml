@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>    
+		<typeAlias alias="adminBoard" type="spring.mvc.model.SpringBoardBean" />
+		<typeAlias alias="adminBbs" type="spring.mvc.model.SpringBbsBean" />
+	</typeAliases>	
+	<mappers>
+	    <mapper resource="spring/mvc/dao/admin_bbs2.xml" />
+	    <mapper resource="spring/mvc/dao/admin_board2.xml" />
+	</mappers>
+</configuration>

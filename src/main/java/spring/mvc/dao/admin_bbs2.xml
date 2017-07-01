@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.mvc.model.SpringBbsBean"> 
+
+    <!-- 관리자 단 자료실 총 게시물 수 -->
+	<select id="aBbs_count" resultType="int">
+	  select count(bbs_no) from springBbs
+	</select>
+	<!-- 관리자 자료실 검색결과(제목) 총 게시물 수-->
+	<select id="abbsfind_cnt1" resultType="int"
+	        parameterType="String">
+	  select count(bbs_no) from springBbs
+	     where bbs_subject like #{find_name}
+	</select>
+	<!-- 관리자 자료실 검색결과(내용) 총 게시물 수-->
+	<select id="abbsfind_cnt2" resultType="int"
+	        parameterType="String">
+	  select count(bbs_no) from springBbs
+	     where bbs_content like #{find_name}
+	</select>
+	<!-- 관리자 자료실 저장 -->
+	<insert id="admin_bbs_ins" 
+	         parameterType="adminBbs">
+	 insert into springBbs (bbs_no,bbs_name,
+	 bbs_subject,bbs_content,bbs_pass,bbs_file,
+	 bbs_ref,bbs_step,bbs_level,bbs_regdate) 
+	 values(springBbs_seq.nextval,#{bbs_name}, 
+	 #{bbs_subject}, #{bbs_content},#{bbs_pass},
+	 #{bbs_file},springBbs_seq.nextval,0,0,sysdate)         
+	</insert>
+	<!-- 관리자 자료실 수정-->
+	<update id="admin_bbs_edit" 
+	         parameterType="adminBbs">
+	 update springBbs set bbs_name=#{bbs_name},
+	 bbs_subject=#{bbs_subject},
+	 bbs_content=#{bbs_content},bbs_file=#{bbs_file}
+	 where bbs_no=#{bbs_no}      
+	</update> 
+	<!-- 관리자 자료실 삭제 -->
+	<delete id="admin_bbs_del" parameterType="int">
+	  delete from springBbs where bbs_no=#{bbs_no} 
+	</delete>
+	<!-- 관리자 자료실 내용 -->
+	<select id="admin_bbs_cont" parameterType="int"
+	        resultType="adminBbs">
+	  select * from springBbs where bbs_no=#{bbs_no} 
+	</select>
+</mapper>
+

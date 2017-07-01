@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+/* index_gongji.jsp UI */
+#indexGongji_wrap{
+	width:400px; height:250px;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 50px skyblue;
+	margin-top:40px; margin-left:auto; margin-right:auto;
+}
+#indexGongji_wrap .indexGongji_title{
+	margin:20px 0 0 50px; width:320px; background:pink;
+	border-radius:15px; font-size:19px; padding:3px;
+	text-align:center;
+}
+#indexGongji_t{
+	margin:20px 0 0 60px;
+}
+a:link{
+	text-decoration:none;
+}
+a:active{
+	text-decoration:none;
+}
+a:visited{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+
+/* index_gongjiCont.jsp UI */
+#iGcont_wrap{
+	width:400px; border:1px solid skyblue;
+	box-shadow:15px 15px 15px skyblue;
+	margin-top:40px; margin-left:auto; margin-right:auto;
+	border-radius:15px; padding:10px;
+}
+#iGcont_wrap .iGcont_title{
+	margin:20px 0 0 70px; width:250px; padding:3px;
+	background:pink; border-radius:15px;font-size:18px;
+	text-align:center;
+}
+#iGcont_t{
+	margin:20px 0 0 50px;
+}
+#iGcont_t th{
+	background:pink; border-radius:10px;
+}
+#iGcont_menu{
+	margin:20px 0 0 220px;
+}
+.gbutton_b:hover{
+  cursor:pointer; cursor:hand; font-weight:bold;
+  padding:2px; border:1px solid red; border-radius:10px;	
+}
+
+/* gongji_list.jsp UI */
+#Gongji_list{
+	width:520px; height:auto;
+	border:1px dotted orange;
+	margin-top:10px; margin-left:auto;
+	margin-right:auto;
+	border-radius:20px; 
+	box-shadow:15px 15px 15px skyblue;
+	font-size:12px;
+}
+#Gongji_list .Glist_title{
+	margin:20px 0 0 150px; width:220px;
+	background:pink; padding:3px; border-radius:15px;
+	text-align:center; font-size:19px;
+}
+#Glist_count{
+	margin:10px 0 0 360px; background:pink;
+	padding:3px; border-radius:15px; text-align:center;
+	font-size:14px;width:110px;
+}
+#Glist_t{
+	margin:10px 0 0 30px;
+	border-collapse:collapse;
+}
+#Glist_t .no{
+	width:50px;text-align:center
+}
+#Glist_t .title{
+	width:180px;text-align:center;
+}
+#Glist_t .writer{width:60px;text-align:center;}
+#Glist_t .date{width:100px; text-align:center;}
+#Glist_t .hit{text-align:center;}
+
+#Glist_t .title_box{
+	padding-left:10px; text-align:left;
+}
+#Glist_paging{
+	margin:20px 0 0 200px;
+}
+
+/* gongji_cont.jsp ui */
+#uGongji_wrap{
+	width:400px; padding:10px;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 15px skyblue;
+	margin-top:50px; margin-left:auto; margin-right:auto;
+}
+#uGongji_wrap .uGongji_title{
+	margin:20px 0 0 120px; width:160px;
+	font-size:19px; padding:2px;text-align:center; 
+	background:pink; border-radius:15px;
+}
+#uGongji_t{
+	margin:20px 0 0 30px;
+}
+#uGongji_t th{
+	background:pink; border-radius:15px;
+}
+#uGongji_menu{
+	margin:20px 0 0 200px;
+}
+
+
+
+
+
+
+

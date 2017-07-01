@@ -1,0 +1,168 @@
+﻿@CHARSET "UTF-8";
+
+/*board_write.jsp ui*/
+#dWrite_wrap{
+	width:450px; height:auto; margin-top:20px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:10px 10px 10px skyblue;
+}
+#dWrite_wrap .dWrite_title{
+	margin:20px 0 0 165px; width:120px; background:pink;
+	border-radius:10px; padding:3px; text-align:center;
+	font-size:19px;
+}
+#dWrite_t{
+	margin:20px 0 0 17px;
+}
+#dWrite_menu{
+	margin:25px 0 0 175px;
+}
+.box{
+	border:1px solid blue; border-radius:10px; padding:2px;
+}
+.input_b:hover{
+    cursor:hand;cursor:pointer; background:#ccc; border:1px solid red;
+    border-radius:15px; padding:3px; box-shadow:10px 10px 10px yellow;
+    font-weight:bold; 	
+}
+
+/* bbs_list.jsp */
+#list_wrap{
+	width:500px; height:auto;
+	border:1px dotted orange;
+	margin-top:10px; margin-left:auto;
+	margin-right:auto;
+	border-radius:20px; 
+	box-shadow:15px 15px 15px skyblue;
+	font-size:12px;
+}
+#list_wrap .list_title{
+	margin:20px 0 0 160px; width:190px;
+	background:pink; padding:3px; border-radius:15px;
+	text-align:center; font-size:19px;
+	font-family : 맑은 고딕;
+}
+#list_count{
+	margin:20px 0 0 350px; background:pink;
+	padding:3px; border-radius:15px; text-align:center;
+	font-size:14px;width:110px;
+}
+#list_t{
+	margin:20px 0 0 40px;
+	border-collapse:collapse;
+}
+#list_t .no{
+	width:50px;text-align:center
+}
+#list_t .title{
+	width:150px;text-align:center;
+}
+#list_t .writer{width:70px;text-align:center;}
+#list_t .date{width:100px; text-align:center;}
+#list_t .hit{text-align:center;}
+
+a:link{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#list_t .title_box{
+	padding-left:10px; text-align:left;
+}
+#list_paging{
+	margin:35px 0 0 200px;
+}
+#list_menu{
+	margin:5px 0 0 380px;
+}
+
+/* board_cont.jsp ui */
+#dCont_wrap{
+	width:300px;
+	padding:10px; border:1px solid blue;
+	border-radius:15px;  box-shadow:10px 10px 10px skyblue;
+	margin-top:60px; margin-left:auto; margin-right:auto;
+}
+#dCont_wrap .dCont_title{
+	margin:20px 0 0 90px; width:120px; background:orange;
+	font-size:19px; text-align:center;
+	border-radius:15px;
+}
+#dCont_t{
+	margin:15px 0 0 30px;
+}
+#dCont_t th{
+	background:pink; border-radius:10px;
+}
+#dCont_menu{
+	margin:15px 0px 0 40px;
+}
+
+/* board_reply.jsp ui */
+#dReply_wrap{
+	width:470px; height:auto; 
+	border:1px solid blue;
+	border-radius:15px;
+	margin-top:20px; margin-left:auto; margin-right:auto;
+	box-shadow:15px 15px 15px skyblue;
+}
+#dReply_wrap .dReply_title{
+    margin:20px 0 0 180px; width:100px; font-size:20px;
+    text-align:center; padding:3px; border-radius:10px;
+    background:pink;	
+}
+#dReply_t{
+	margin:20px 0 0 30px;
+}
+#dReply_t th{
+	background:pink; border-radius:10px;
+}
+#dReply_menu{
+	margin:20px 0 0 200px;
+}
+
+/* board_edit.jsp ui */
+#dEdit_wrap{
+	width:450px; height:auto; margin-top:20px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 15px skyblue;
+}
+#dEdit_wrap .dEdit_title{
+	margin:25px 0 0 150px; width:150px;
+	font-size:20px; background:skyblue; border-radius:15px;
+	padding:3px;
+}
+#dEdit_t{
+	margin:20px 0 0 15px;
+}
+#dEdit_t th{
+	background:pink; border-radius:10px;
+}
+#dEdit_menu{
+	margin:20px 0 0 170px;
+}
+
+/* board_delete.jsp ui */
+#Del_wrap{
+	width:270px;height:150px;
+	margin-top:60px; margin-left:auto;
+	margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 15px orange;
+}
+#Del_wrap .Del_title{
+    margin:20px 0 0 75px; width:130px;
+    padding:3px; font-size:19px;background:pink;
+    border-radius:15px; text-align:center;	
+}
+#Del_t{
+	margin:18px 0 0 25px;
+}
+#Del_t th{
+	background:pink; border-radius:10px;
+}
+#Del_menu{
+	margin:13px 0 0 92px;
+}

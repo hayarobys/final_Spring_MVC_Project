@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="gongji" type="spring.mvc.model.SpringGongjiBean2" />
+	<!-- 사용자 최신글 5개 공지 목록 -->
+	<select id="indexGongjiList" resultClass="gongji">
+	select * from(
+	 select gongji_no,gongji_title,gongji_regdate
+	 from springGongji order by gongji_no desc)
+	 where rownum &lt; 6	
+	</select> <!-- &lt; 제어문자는 < 6 -->
+	
+	<!-- 사용자 공지사항 조회수 증가 -->
+	<update id="gongji_hit" parameterClass="int">
+	   update springGongji set gongji_hit=gongji_hit+1
+	   where gongji_no=#no# 
+	</update>
+	<!-- 사용자 공지사항 내용보기 -->
+	<select id="igongji_cont" resultClass="gongji"
+	        parameterClass="int">
+	  select * from  springGongji where gongji_no=#no#    
+	</select>
+</sqlMap>
+
+
+
+
+
+
+
+
+	

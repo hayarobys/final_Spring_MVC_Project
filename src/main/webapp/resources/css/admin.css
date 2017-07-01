@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+/*admin_index.jsp ui*/
+#aIndex_wrap{
+	width:290px; height:200px;
+	border:1px solid blue; box-shadow:15px 15px 15px orange;
+	margin-top:50px; margin-left:auto; margin-right:auto;
+	border-radius:15px;
+}
+#aIndex_wrap .aIndex_title{
+    margin:20px 0 0 70px;	width:140px;
+    font-size:19px; background:pink;
+    border-radius:15px; text-align:center;  
+    padding:3px;  
+}
+#aIndex_t{
+	margin:20px 0 0 25px;
+}
+#aIndex_t th{
+	background:pink; border-radius:10px;
+}
+.admin_box{
+	border:1px solid skyblue; border-radius:10px;
+	padding:3px;
+}
+.admin_b:hover{
+	cursor:pointer; cursor:hand; border:1px solid red;
+	border-radius:15px; font-weight:bold; padding:2px;
+}
+#aIndex_menu{
+	margin:20px 0 0 90px;
+}
+
+/* admin_main.jsp ui */
+#aMain_Login{
+	width:190px; height:140px;
+	margin:40px 0 0 15px;
+	padding : 5px; 
+	border:2px dotted #B51DA1;
+	border-radius:15px; 
+	box-shadow:15px 10px 30px #B51DA1;
+}
+#aLogin_t{	
+	margin-top:30px;
+}
+
+
+
+
+
+
+
+
+

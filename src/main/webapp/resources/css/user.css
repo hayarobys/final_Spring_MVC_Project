@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+/*user_list.jsp ui */
+#gList_wrap{
+  width:500px; padding:10px;
+  border:1px dotted orange;
+  margin-top:10px; border-radius:15px;
+  margin-left:auto; 
+  margin-right:auto;
+  box-shadow:10px 10px 10px skyblue;
+  font-size:12px;	
+}
+#gList_t .id{
+	width:100px;text-align:center
+}
+#gList_t .pwd{
+	width:150px;text-align:center;
+}
+#gList_t .name{width:150px;text-align:center;}
+#gList_wrap .gList_title{
+	margin:20px 0 0 180px; width:160px;
+	padding:3px; background:pink; border-radius:10px;
+	font-size:20px; text-align:center;
+	font-family : 맑은 고딕;
+}
+#gList_count{
+	margin:20px 0 0 320px; background:pink;
+	padding:3px; border-radius:15px; text-align:center;
+	font-size:14px;width:150px;
+}
+#gList_t{
+	margin:20px 0 0 43px;
+}
+#gList_menu{
+    margin:20px 0 0 360px;	
+}
+
+/*user_write.jsp ui */
+#uwrite_wrap{
+	width:450px; height:auto; 
+	margin-top:20px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 15px skyblue;
+}
+#uwrite_wrap .uwrite_title{
+	margin:20px 0 0 150px; width:140px; background:pink;
+	border-radius:10px; text-align:center;
+	padding:3px;font-size:20px;	
+}
+#uwrite_t{
+	margin:20px 0 0 20px;
+}
+#uwrite_t th{
+	background:pink; border-radius:10px;
+}
+.box{
+	border:1px solid skyblue; border-radius:13px;
+	padding:2px;
+}
+#uwrite_menu{
+	margin:20px 0 0 180px;
+}
+.input_b:hover{
+	cursor:hand; cursor:pointer;
+    background:#ccc; border-radius:15px; padding:2px;
+    border:1px solid red; font-weight:bold;	
+}
+

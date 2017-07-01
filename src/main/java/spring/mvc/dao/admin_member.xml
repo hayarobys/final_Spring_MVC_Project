@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="adminMember" type="spring.mvc.model.SpringMemberBean" />
+	
+	<!-- 관리자 총 회원수 -->
+	<select id="aMember_count" resultClass="int">
+	  select count(mem_code) from springMember	
+	</select>
+	<!-- 관리자 회원관리 검색(아이디) 총 게시물 수-->
+	<select id="amemberfind_cnt1" resultClass="int"
+	        parameterClass="String">
+	  select count(mem_code) from springMember
+	  where mem_id like #find_name#
+	</select>
+	<!-- 관리자 회원관리 검색(회원이름) 총 게시물 수-->
+	<select id="amemberfind_cnt2" resultClass="int"
+	        parameterClass="String">
+	  select count(mem_code) from springMember
+	  where mem_name like #find_name#
+	</select>
+	<!-- 관리자 회원 정보 보기 -->
+	<select id="aMember_info" parameterClass="String"
+	        resultClass="adminMember">
+	  select * from springMember where mem_id=#mem_id# 
+	</select>
+	<!-- 관리자 회원정보 수정 -->
+	<update id="amem_edit" parameterClass="adminMember">
+	  update springMember set mem_pwd=#mem_pwd#,
+	  mem_name=#mem_name#,mem_zip=#mem_zip#,
+	  mem_zip2=#mem_zip2#,mem_addr=#mem_addr#,
+	  mem_addr2=#mem_addr2#,mem_phone=#mem_phone#,
+	  mem_email=#mem_email# where mem_id=#mem_id#
+	</update>
+	
+	<!-- 관리자 회원관리 목록(작성중) -->
+	<!-- <select id="amem_list" parameterClass="model.MemberListBean"
+	        resultClass="adminMember">
+	select * from (select springMember.*, rownum as rnum 
+	from (select * from springMember order by 
+	mem_code desc) springMember) 
+	where rnum>=#startrow# and rnum <![CDATA[<=]]>#endrow#	
+	</select> -->
+	
+    
+	<!-- 관리자 회원관리 검색 목록(작성중) -->
+	
+	<!-- 관리자 회원 삭제 -->
+	<delete id="amem_del" parameterClass="String">
+	   delete from springMember where mem_id=#mem_id#
+	</delete>
+</sqlMap>
+
+
+
+
+
+
+
+
+	
