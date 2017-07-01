@@ -155,36 +155,42 @@ public class MemberController {
 	  
 	  /* 로그인 인증 체크 */
 	  @RequestMapping(value="/member_Login_ok.do",method=RequestMethod.POST)
-	  public ModelAndView login_ok(HttpServletRequest request,
-			  HttpServletResponse response, HttpSession session) throws IOException, SQLException{
-		 response.setContentType("text/html;charset=UTF-8");
-		 PrintWriter out = response.getWriter();
-		 String id = request.getParameter("login_id").trim();
-		 String pwd = request.getParameter("login_pwd").trim();
-		 // idSearch()메서드를 호출하여 로그인 결정
-		 SpringMemberBean bean = this.memService.idSearch(id);
-		 // 기존 비번 검색
-		 if(bean != null){
-			 if(bean.getMem_pwd().equals(pwd)){
-				 session.setAttribute("id",id);
-				 session.setAttribute("name",bean.getMem_name());
-				 // main.jsp 페이지 이동
-				 ModelAndView mv = new ModelAndView("main");
-				 return mv;
-				 //response.sendRedirect("main.do");
-			 }else{ // 비번이 틀린 경우
-				 out.println("<script>");
-				 out.println("alert('비번이 틀립니다.')");
-				 out.println("history.back()");
-				 out.println("</script>");
-			 }
-		 }else{ // id가 틀린 경우
-			 out.println("<script>");
-			 out.println("alert('가입 회원이 아닙니다.')");
-			 out.println("history.back()");
-			 out.println("</script>");
-		 }
-		 return null;
+	  public ModelAndView login_ok(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			  throws IOException, SQLException{
+		  
+		  response.setContentType("text/html;charset=UTF-8");
+		  
+		  // 이 out객체를 통해 response에 적은 문구들이 띄워질 페이지는 도대체 어디서 생성되는 걸까?
+		  PrintWriter out = response.getWriter();
+		  String id = request.getParameter("login_id").trim();
+		  String pwd = request.getParameter("login_pwd").trim();
+		  
+		  // idSearch()메서드를 호출하여 로그인 결정
+		  SpringMemberBean bean = this.memService.idSearch(id);
+		  
+		  // 기존 비번 검색
+		  if(bean != null){
+			  if(bean.getMem_pwd().equals(pwd)){
+				  	session.setAttribute("id",id);
+				  	session.setAttribute("name",bean.getMem_name());
+				  	// main.jsp 페이지 이동
+				  	ModelAndView mv = new ModelAndView("main");
+				  	return mv;
+				  	//response.sendRedirect("main.do");
+			  }else{ // 비번이 틀린 경우
+				  out.println("<script>");
+				  out.println("alert('비번이 틀립니다.')");
+				  out.println("history.back()");
+				  out.println("</script>");
+			  }
+		  }else{ // id가 틀린 경우
+			  out.println("<h1>안녕하세요 여러부눙!!!!</h1>");
+			  out.println("<script>");
+			  out.println("alert('가입 회원이 아닙니다.')");
+			  out.println("history.back()");
+			  out.println("</script>");
+		  }
+		  return null;
 	  }
 	  /* 로그 아웃 */
 	  @RequestMapping(value="/member_Logout.do",method=RequestMethod.POST)

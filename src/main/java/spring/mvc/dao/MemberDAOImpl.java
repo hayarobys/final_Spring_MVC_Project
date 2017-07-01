@@ -27,8 +27,7 @@ public class MemberDAOImpl {
 	/* ibatis 중복 아이디 체크 */
 	public SpringMemberBean idCheck(String id) throws SQLException{
 		SpringMemberBean bean = null;
-		bean = (SpringMemberBean)this.template
-				.queryForObject("member_idcheck",id);
+		bean = (SpringMemberBean)this.template.queryForObject("member_idcheck",id);
 		return bean;
 	}
 	
